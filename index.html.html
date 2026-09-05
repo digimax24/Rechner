@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einfacher Rechner</title>
+    <style>
+        /* Ein bisschen CSS, damit es ordentlich aussieht */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        input {
+            width: 80px;
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #ergebnis {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Einfache Addition</h2>
+
+    <!-- Eingabefelder für die beiden Zahlen -->
+    <input type="number" id="zahl1" placeholder="Zahl 1"> +
+    <input type="number" id="zahl2" placeholder="Zahl 2">
+    
+    <!-- Button zum Auslösen der Berechnung -->
+    <button onclick="berechne()">=</button>
+
+    <!-- Hier wird das Ergebnis angezeigt -->
+    <div id="ergebnis">Ergebnis: </div>
+
+    <!-- Das JavaScript-Script für die Berechnung -->
+    <script>
+        function berechne() {
+            // 1. Werte aus den Eingabefeldern auslesen
+            let wert1 = document.getElementById("zahl1").value;
+            let wert2 = document.getElementById("zahl2").value;
+
+            // 2. Text in echte Zahlen umwandeln (wichtig für die Addition!)
+            let n1 = Number(wert1);
+            let n2 = Number(wert2);
+
+            // 3. Die Addition durchführen
+            let summe = n1 + n2;
+
+            // 4. Das Ergebnis im Web-Interface ausgeben
+            document.getElementById("ergebnis").innerText = "Ergebnis: " + summe;
+        }
+    </script>
+
+</body>
+</html>
